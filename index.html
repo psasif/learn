@@ -10,29 +10,3 @@
 </html>
 
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Public IP Display</title>
-</head>
-<body>
-    <h1>Public IP Address</h1>
-    <p id="publicIP">Loading...</p>
-
-    <script>
-        // Fetch public IP address from an API
-        fetch('https://api.ipify.org?format=json')
-            .then(response => response.json())
-            .then(data => {
-                const publicIP = data.ip;
-                document.getElementById('publicIP').textContent = `Your public IP address is: ${publicIP}`;
-            })
-            .catch(error => {
-                console.log('Error fetching IP:', error);
-                document.getElementById('publicIP').textContent = 'Failed to fetch IP address';
-            });
-    </script>
-</body>
-</html>
-
